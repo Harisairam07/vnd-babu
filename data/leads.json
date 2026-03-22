@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "local_1774095733582_taej0g4t",
+    "name": "Harisairam",
+    "phone": "7337212474",
+    "loan_type": "Mortgage Loan",
+    "city": "hyderabad",
+    "createdAt": "2026-03-21T12:22:13.579Z",
+    "status": "New"
+  },
+  {
+    "_id": "local_1774095735711_ygz2acny",
+    "name": "Local Test",
+    "phone": "9876543210",
+    "loan_type": "Housing Loan",
+    "city": "Hyderabad",
+    "createdAt": "2026-03-21T12:22:15.709Z",
+    "status": "New"
+  },
+  {
+    "_id": "local_1774155048667_0gxrb4ku",
+    "name": "Test User",
+    "phone": "9876543210",
+    "loan_type": "Home Loan",
+    "city": "Hyderabad",
+    "createdAt": "2026-03-22T04:50:48.665Z",
+    "status": "New"
+  },
+  {
+    "_id": "local_1774155060640_lsovq57z",
+    "name": "Harisairam",
+    "phone": "7337212474",
+    "loan_type": "Personal Loan",
+    "city": "hyderabad",
+    "createdAt": "2026-03-22T04:51:00.638Z",
+    "status": "New"
+  }
+]

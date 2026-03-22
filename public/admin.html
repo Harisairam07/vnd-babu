@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VND Babu Financial Solutions Admin Dashboard</title>
+  <meta
+    name="description"
+    content="Admin dashboard for VND Babu Financial Solutions lead management, analytics, and loan enquiry pipeline."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="admin-page">
+  <section class="admin-login-screen" id="admin-login-screen">
+    <div class="admin-login-card">
+      <p class="eyebrow">Admin Access</p>
+      <h1>Sign in to open the lead dashboard</h1>
+      <p>Use the authorized admin ID and password to access lead analytics and status updates.</p>
+
+      <form id="admin-login-form" class="admin-login-form">
+        <label>
+          Admin ID
+          <input type="text" name="email" placeholder="Enter admin ID" required />
+        </label>
+        <label>
+          Password
+          <input type="password" name="password" placeholder="Enter password" required />
+        </label>
+        <button type="submit" class="btn btn-gold">Login to Dashboard</button>
+        <p id="admin-login-message" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <div class="admin-shell" id="admin-shell" hidden>
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <strong>VND Babu Financial Solutions</strong>
+        <span>Lead management dashboard</span>
+      </div>
+
+      <nav class="admin-menu">
+        <a href="#overview">
+          <strong>Overview</strong>
+          <small>Lead analytics and pipeline</small>
+        </a>
+        <a href="#filters">
+          <strong>Filters</strong>
+          <small>Loan type, status and city views</small>
+        </a>
+        <a href="#leads-table">
+          <strong>Lead Table</strong>
+          <small>Status updates and follow-up</small>
+        </a>
+        <a href="index.html">
+          <strong>Back to Website</strong>
+          <small>Public fintech frontend</small>
+        </a>
+      </nav>
+    </aside>
+
+    <main class="admin-content">
+      <section class="admin-topbar" id="overview">
+        <div>
+          <p class="eyebrow">Admin Dashboard</p>
+          <h1>Lead management for VND Babu Financial Solutions</h1>
+          <p>Track total leads, today performance, conversion pipeline, and monthly lead movement from a single operational view.</p>
+        </div>
+        <div class="admin-actions">
+          <button type="button" class="btn btn-outline" id="admin-logout-btn">Logout</button>
+          <a href="index.html#contact" class="btn btn-outline">Open Website</a>
+          <a href="https://wa.me/917702441444" class="btn btn-gold">Talk to Team</a>
+        </div>
+      </section>
+
+      <section class="stats-grid">
+        <article class="stat-card">
+          <p>Total Leads</p>
+          <h2 id="total-leads-value">0</h2>
+        </article>
+        <article class="stat-card">
+          <p>Today Leads</p>
+          <h2 id="today-leads-value">0</h2>
+        </article>
+        <article class="stat-card">
+          <p>Converted</p>
+          <h2 id="converted-leads-value">0</h2>
+        </article>
+        <article class="stat-card">
+          <p>Active Pipeline</p>
+          <h2 id="active-pipeline-value">0</h2>
+        </article>
+      </section>
+
+      <section class="dashboard-main">
+        <article class="chart-card">
+          <h3>Monthly Lead Trend</h3>
+          <p>Last six months of enquiries captured through the website and popup forms.</p>
+          <div class="chart-bars" id="monthly-chart"></div>
+        </article>
+
+        <article class="chart-card">
+          <h3>Operational Notes</h3>
+          <p>Use filters to isolate demand by product and city, then update each lead as it moves through the conversion pipeline.</p>
+          <p class="admin-note">Status flow: new -> contacted -> converted</p>
+        </article>
+      </section>
+
+      <section class="filter-bar" id="filters">
+        <label>
+          Loan Type
+          <select id="loan-type-filter">
+            <option value="">All loan types</option>
+          </select>
+        </label>
+        <label>
+          City
+          <input id="city-filter" type="text" placeholder="Filter by city" />
+        </label>
+        <label>
+          Status
+          <select id="status-filter">
+            <option value="">All statuses</option>
+            <option value="new">new</option>
+            <option value="contacted">contacted</option>
+            <option value="converted">converted</option>
+          </select>
+        </label>
+        <div class="filter-actions">
+          <button type="button" class="btn btn-gold" id="apply-filters-btn">Apply Filters</button>
+          <button type="button" class="btn btn-outline" id="clear-filters-btn">Reset</button>
+        </div>
+      </section>
+
+      <section class="table-card" id="leads-table">
+        <h3>Lead Table</h3>
+        <p>Lead details with qualification context for better follow-up priority.</p>
+        <table class="dashboard-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Employment</th>
+              <th>Loan Type</th>
+              <th>Loan Amount</th>
+              <th>Purpose</th>
+              <th>City</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="leads-table-body"></tbody>
+        </table>
+        <p class="table-empty" id="table-empty-message" hidden>No leads found for the selected filters.</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: vnd-babu-finance
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    autoDeploy: true
+    envVars:
+      - key: MONGO_URI
+        sync: false
+      - key: MONGO_DB
+        value: vnd_babu_finance
+      - key: JWT_SECRET_KEY
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: DUPLICATE_WINDOW_MINUTES
+        value: 20
+      - key: WHATSAPP_ENABLED
+        value: false
+      - key: WHATSAPP_WEBHOOK_URL
+        sync: false
