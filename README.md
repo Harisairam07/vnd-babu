@@ -8,6 +8,7 @@ Production-ready financial lead generation platform with FastAPI, MongoDB Atlas,
 - Backend: FastAPI (`app/`)
 - Database: MongoDB Atlas (Motor/PyMongo)
 - Auth: JWT (admin login)
+- Deployment Runtime: Python 3 (Render)
 
 ## Folder Structure
 
